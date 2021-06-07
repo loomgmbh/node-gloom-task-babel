@@ -32,7 +32,7 @@ module.exports = class ScriptsTask extends Task {
   task(config, manager) {
     Gulp.task('scripts', function scriptsCompile() {
       return Gulp.src(config.scripts.files)
-        .pipe(babel({
+        .pipe(Babel({
           presets: config.scripts.presets,
         }))
         .pipe(Uglify().on('error', console.log))
